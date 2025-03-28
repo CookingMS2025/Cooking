@@ -1,0 +1,43 @@
+package myCooking;
+import java.util.List;
+import java.util.ArrayList;
+
+public class Customer {
+	private String Name;
+	private List<String> dietaryPreferences;
+	private List<String> allergies;
+	private List<Meal> pastOrders;
+	public Customer() {
+		
+	}
+	public Customer(String name) {
+	  this.Name=name;
+	  this.dietaryPreferences=new ArrayList();
+	  this.allergies=new ArrayList();
+	  this.pastOrders=new ArrayList();
+	}
+	
+	public void addDietaryPreference(String preference) {
+		dietaryPreferences.add(preference);
+	}
+	
+	public void addAllergies(String Allergy) {
+		allergies.add(Allergy);
+	}
+	public List<String> getDietaryPreference(){
+		return dietaryPreferences;
+	}
+	public List<String> getAllergies(){
+		return allergies;
+	}
+	public List<Meal> getPastOrders(){
+		return pastOrders;
+	}
+	public String getName() {
+		return Name;
+	}
+	public void addOrder(Meal meal) {
+		pastOrders.add(meal);
+	}
+
+}
