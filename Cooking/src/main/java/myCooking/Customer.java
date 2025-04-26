@@ -7,6 +7,7 @@ public class Customer {
 	private List<String> dietaryPreferences;
 	private List<String> allergies;
 	private List<Meal> pastOrders;
+	private List<Meal> customMeals;
 	public Customer() {
 		
 	}
@@ -15,6 +16,7 @@ public class Customer {
 	  this.dietaryPreferences=new ArrayList();
 	  this.allergies=new ArrayList();
 	  this.pastOrders=new ArrayList();
+	  this.customMeals = new ArrayList<>();
 	}
 	
 	public void addDietaryPreference(String preference) {
@@ -39,5 +41,15 @@ public class Customer {
 	public void addOrder(Meal meal) {
 		pastOrders.add(meal);
 	}
+	public void addCustom(Meal meal) {
+		customMeals.add(meal);
+	}
+	public List<Meal> getCustomMeals(){
+		return customMeals;
+	}
+	public boolean isIngredientRestricted(String ingredient) {
+	    return allergies.contains(ingredient) || dietaryPreferences.contains("No " + ingredient);
+	}
+
 
 }

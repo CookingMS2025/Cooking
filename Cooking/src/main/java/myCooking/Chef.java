@@ -1,8 +1,35 @@
 package myCooking;
 
 import java.util.List;
+import java.util.ArrayList;
 
 public class Chef {
+	private String name;
+	private List<String> expertise;
+	private List<Task> assignedTasks=new ArrayList<>();
+	private int workload;
+	
+	public Chef() {};
+	
+	public Chef(String name, List<String> expertise, int workload) {
+	    this.name = name;
+	    this.expertise = expertise;
+	    this.workload = workload;
+	}
+	public List<String> getExpertise() { return expertise; }
+	
+	public int getWorkload() { return workload; }
+
+	public List<Task> getAssignedTasks() {
+	    return assignedTasks;
+	}
+	public void assignTask(Task task) {
+	    assignedTasks.add(task);
+	    workload++;
+	}
+	public String notifyTask(Task task) {
+	    return "New Task Assigned: " + task.getName() + ". Prepare as per schedule.";
+	}
 	public String viewDietaryPreferences(Customer customer) {
         List<String> preferences = customer.getDietaryPreference();
         if (preferences.isEmpty()) {
@@ -25,7 +52,7 @@ public class Chef {
 	        if (customer.getDietaryPreference().contains(P) && !meal.getIngredients().contains(I)) {
 	            customizationMessage.append("Meal is friendly.\n");
 	        } else if (customer.getDietaryPreference().contains(P) && meal.getIngredients().contains(I)) {
-	            return "This meal contains meat, which doesn't align with the customer's preferences.";
+	            return "This meal contains unwanted ingredient which doesn't align with the customer's preferences.";
 	        }
 	     // Check allergies
 	        for (String allergy : customer.getAllergies()) {
@@ -38,7 +65,7 @@ public class Chef {
 	        customizationMessage.append("Meal customization completed based on preferences.");
 	        return customizationMessage.toString();
 	
- }
+    }
 	 public void viewCustomerOrders(Customer c) {
 		 System.out.println("Chef viewing past orders for " + c.getName() + ":");
 		 for(Meal m:c.getPastOrders()) {
@@ -48,6 +75,8 @@ public class Chef {
 	 public void suggestMealPlan() {
 		 System.out.println("Chef suggests a balanced meal plan based on customer history.");
 	 }
-
+	 public void notifyIngredientSubstitution(String oldIng, String newIng) {
+		    System.out.println("Chef Alert: Ingredient '" + oldIng + "' was replaced with '" + newIng + "'.");
+		}
 
 }

@@ -53,7 +53,7 @@ public class TrackOrdersSteps {
 		chef= new Chef();
 	}
 
-	@When("the chef selects a customer")
+	@When("the chef chooses a customer from order history ")
 	public void the_chef_selects_a_customer() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();

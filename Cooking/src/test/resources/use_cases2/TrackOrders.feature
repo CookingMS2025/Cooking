@@ -28,7 +28,7 @@ Feature: Track past orders and personalized meal plans
   @tag2
   Scenario Outline: Chef suggests personalized meal plans
     Given A chef wants to access customer older history
-    When the chef selects a customer
+    When the chef chooses a customer from order history
     Then The system should display the customer is past orders
     And The chef should be able to suggest personalized meal plans
     

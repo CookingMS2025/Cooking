@@ -6,12 +6,6 @@
   
   <dependencies>
 
-<dependency>
-        <groupId>org.junit.jupiter</groupId>
-        <artifactId>junit-jupiter-api</artifactId>
-        <version>5.7.0</version>
-        <scope>test</scope>
-    </dependency>
 
 <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-picocontainer -->
 <dependency>
@@ -55,10 +49,12 @@
                 <version>3.0.0-M7</version>
                 <configuration>
                     <includes>
-                        <include>**/RunCucumberTest.java</include>
+                        <include>**/TestRunner.java</include>
                     </includes>
                 </configuration>
             </plugin>
+            
+
 
         </plugins>
         
