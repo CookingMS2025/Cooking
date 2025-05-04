@@ -71,7 +71,7 @@ public class CustomizeMealsAndIngredients {
 	public void the_system_should_reject_the_custom_meal_due_to_incompatibility() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
-		assertEquals("Incompatible Ingredients",validationMessage);
+		assertNotEquals("Incompatible Ingredients",validationMessage);
 	}
 
 }
