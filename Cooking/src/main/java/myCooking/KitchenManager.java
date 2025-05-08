@@ -1,5 +1,6 @@
 package myCooking;
 import java.util.*;
+import myCooking.Supplier;
 public class KitchenManager {
    private List<Chef> chefs=new ArrayList<>();
    
@@ -27,4 +28,23 @@ public class KitchenManager {
 	    return mostSuitableChef;
 	     
    }
-}
+
+   public Supplier comparePrice(Supplier[] supplierList,String ingredient){
+	   if (supplierList==null || supplierList.length==0) {
+		   throw new IllegalArgumentException("Array is null or empty");
+	   }
+
+	   double min = supplierList[0].getPrice(ingredient);
+	   int i;
+	   for ( i=1; i<supplierList.length;i++) {
+		   if (supplierList[i].getPrice(ingredient) < min) {
+			   min = supplierList[i].getPrice(ingredient);
+		   }
+	   }
+	   return supplierList[i];
+   }
+
+
+
+   }
+
