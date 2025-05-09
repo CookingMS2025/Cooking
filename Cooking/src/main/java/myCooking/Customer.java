@@ -10,6 +10,7 @@ public class Customer {
 	private List<Meal> customMeals;
 
 	private String email;
+	private boolean deliveryScheduled;
 	public Customer() {
 		
 	}
@@ -27,6 +28,10 @@ public class Customer {
 	public Customer(String name,String email) {
 		this.Name=name;
 		this.email=email;}
+
+	public Customer(String name,boolean deliveryScheduled) {
+		this.Name=name;
+		this.deliveryScheduled=deliveryScheduled;}
 	
 	public void addDietaryPreference(String preference) {
 		dietaryPreferences.add(preference);
@@ -60,6 +65,9 @@ public class Customer {
 	    return allergies.contains(ingredient) || dietaryPreferences.contains("No " + ingredient);
 	}
 	public String getEmail(){return email;}
+	public boolean hasDeliveryScheduled(){
+		return deliveryScheduled;
+	}
 
 
 }

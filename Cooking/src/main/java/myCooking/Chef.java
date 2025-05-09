@@ -8,6 +8,8 @@ public class Chef {
 	private List<String> expertise;
 	private List<Task> assignedTasks=new ArrayList<>();
 	private int workload;
+
+	private boolean scheduledMeal,mealConfirmed;
 	
 	public Chef() {};
 	
@@ -16,6 +18,12 @@ public class Chef {
 	    this.expertise = expertise;
 	    this.workload = workload;
 	}
+	public Chef(String name,boolean scheduledMeal,boolean mealConfirmed) {
+		this.name=name;
+		this.mealConfirmed=mealConfirmed;
+		this.scheduledMeal=scheduledMeal;
+
+	};
 	public List<String> getExpertise() { return expertise; }
 	
 	public int getWorkload() { return workload; }
@@ -79,4 +87,9 @@ public class Chef {
 		    System.out.println("Chef Alert: Ingredient '" + oldIng + "' was replaced with '" + newIng + "'.");
 		}
 
+		public boolean hasScheduledMeal(){
+		return scheduledMeal;
+		}
+
+		public boolean mealIsConfirmed(){return mealConfirmed;}
 }
