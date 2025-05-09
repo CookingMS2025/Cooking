@@ -8,16 +8,25 @@ public class Customer {
 	private List<String> allergies;
 	private List<Meal> pastOrders;
 	private List<Meal> customMeals;
+
+	private String email;
 	public Customer() {
 		
 	}
+
+
 	public Customer(String name) {
 	  this.Name=name;
+
 	  this.dietaryPreferences=new ArrayList();
 	  this.allergies=new ArrayList();
 	  this.pastOrders=new ArrayList();
 	  this.customMeals = new ArrayList<>();
 	}
+
+	public Customer(String name,String email) {
+		this.Name=name;
+		this.email=email;}
 	
 	public void addDietaryPreference(String preference) {
 		dietaryPreferences.add(preference);
@@ -50,6 +59,7 @@ public class Customer {
 	public boolean isIngredientRestricted(String ingredient) {
 	    return allergies.contains(ingredient) || dietaryPreferences.contains("No " + ingredient);
 	}
+	public String getEmail(){return email;}
 
 
 }
