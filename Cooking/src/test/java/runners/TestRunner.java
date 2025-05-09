@@ -9,8 +9,8 @@ import io.cucumber.junit.CucumberOptions;
     features = "src/test/resources/use_cases2",
     glue = "stepDefinitions",
     plugin = {"pretty", "summary"},
-    monochrome = true,
-        tags = "@restocking"
+    monochrome = true
+
 
 )
 public class TestRunner {
