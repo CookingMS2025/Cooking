@@ -35,13 +35,14 @@ public class KitchenManager {
 	   }
 
 	   double min = supplierList[0].getPrice(ingredient);
-	   int i;
-	   for ( i=1; i<supplierList.length;i++) {
+	   int mini=0;
+	   for ( int i=1; i<supplierList.length;i++) {
 		   if (supplierList[i].getPrice(ingredient) < min) {
 			   min = supplierList[i].getPrice(ingredient);
+			   mini=i;
 		   }
 	   }
-	   return supplierList[i];
+	   return supplierList[mini];
    }
 
 
