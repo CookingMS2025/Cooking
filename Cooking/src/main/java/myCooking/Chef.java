@@ -40,16 +40,14 @@ public class Chef {
 	}
 	public String viewDietaryPreferences(Customer customer) {
         List<String> preferences = customer.getDietaryPreference();
-        if (preferences.isEmpty()) {
-            return "No dietary preferences set.";
-        }
+        if (customer.getDietaryPreference() == null)
+        	return "No preferences";
         return "Dietary Preferences: " + String.join(", ", preferences);
     }
 	 public String viewAllergies(Customer customer) {
 	        List<String> allergies = customer.getAllergies();
-	        if (allergies.isEmpty()) {
-	            return "No allergies set.";
-	        }
+	        if (customer.getAllergies() == null) 
+	        	return "No allergies";
 	        return "Allergies: " + String.join(", ", allergies);
 	    }
      
@@ -74,14 +72,28 @@ public class Chef {
 	        return customizationMessage.toString();
 	
     }
-	 public void viewCustomerOrders(Customer c) {
-		 System.out.println("Chef viewing past orders for " + c.getName() + ":");
-		 for(Meal m:c.getPastOrders()) {
-			 System.out.println("- " + m.getName());
-		 }
+	 public void viewCustomerOrders(Customer customer, OrderHistory orderHistory) {
+	        System.out.println("Chef is viewing the customer's order history...");
+	        orderHistory.displayOrders(customer);
 	 }
-	 public void suggestMealPlan() {
-		 System.out.println("Chef suggests a balanced meal plan based on customer history.");
+	public void suggestMealPlan(Customer customer, OrderHistory orderHistory) {
+        System.out.println("Chef is suggesting a personalized meal plan based on order history...");
+
+        // Simple logic: recommend most frequent meals or add new items
+        System.out.println("Suggested Meal Plan for " + customer.getName() + ":");
+
+        if (customer.getPastOrders().isEmpty()) {
+            System.out.println("- No previous orders found. Suggesting standard healthy meal plan.");
+            System.out.println("- Grilled Salmon");
+            System.out.println("- Quinoa Salad");
+            System.out.println("- Steamed Vegetables");
+        } else {
+            for (Meal meal : customer.getPastOrders()) {
+                System.out.println("- " + meal.getName() + " (Customer favorite)");
+            }
+            System.out.println("- Chef’s Special Smoothie");
+        }
+	        
 	 }
 	 public void notifyIngredientSubstitution(String oldIng, String newIng) {
 		    System.out.println("Chef Alert: Ingredient '" + oldIng + "' was replaced with '" + newIng + "'.");

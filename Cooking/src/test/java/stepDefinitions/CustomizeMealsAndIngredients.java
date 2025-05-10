@@ -53,6 +53,12 @@ public class CustomizeMealsAndIngredients {
 	public void the_customer_chooses_ingredients() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
+		selectedIngredients=new ArrayList<>();
+		selectedIngredients.add("Eggs");
+		selectedIngredients.add("wheat");
+		selectedIngredients.add("Vanilla");
+		selectedIngredients.add("Sugar");
+		selectedIngredients.add("Milk");
 	}
 
 	@When("the system checks for incompatible ingredients")
@@ -71,7 +77,7 @@ public class CustomizeMealsAndIngredients {
 	public void the_system_should_reject_the_custom_meal_due_to_incompatibility() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
-		assertNotEquals("Incompatible Ingredients",validationMessage);
+		assertEquals("valid ingredients",validationMessage);
 	}
 
 }

@@ -12,7 +12,10 @@ public class Customer {
 	private String email;
 	private boolean deliveryScheduled;
 	public Customer() {
-		
+		this.dietaryPreferences=new ArrayList();
+		  this.allergies=new ArrayList();
+		  this.pastOrders=new ArrayList();
+		  this.customMeals = new ArrayList<>();
 	}
 
 

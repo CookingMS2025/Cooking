@@ -38,7 +38,7 @@ public class DietaryPreferencesSteps {
 	@Then("The system should prevent meals with allergens")
 	public void the_system_should_prevent_meals_with_allergens() {
 	    // Write code here that turns the phrase above into concrete actions
-		assertTrue(cu.getAllergies().contains("Peanuts"));
+		assertTrue(cu.getAllergies().contains("peanuts"));
 	   // throw new io.cucumber.java.PendingException();
 	}
 
@@ -46,6 +46,9 @@ public class DietaryPreferencesSteps {
 	public void a_chef_wants_to_view_customer_dietary_preferences() {
 	    // Write code here that turns the phrase above into concrete actions
 		ch=new Chef();
+		cu=new Customer();
+		cu.addDietaryPreference("vegetarian");
+		cu.addAllergies("peanuts");
 	    //throw new io.cucumber.java.PendingException();
 	}
 

@@ -20,14 +20,14 @@
 Feature: Title of your feature
   I want to use this template for my feature file
 
-  @tag1
+  @ingredient
   Scenario: Suggest alternative ingredients for unavailable or restricted items
     Given an ingredient is unavailable or does not fit dietary restrictions
     When the system finds an alternative ingredient
     Then the customer should be shown the suggested substitution
     And the suggested ingredient should be safe for the customer is dietary needs
 
- @tag2
+ @ingredient
   Scenario: Chef receives an alert when an ingredient is substituted
     Given a meal requires a substituted ingredient due to dietary restrictions
     When the substitution is applied to the customer is meal 

@@ -19,20 +19,20 @@
 @tag
 Feature: Track past orders and personalized meal plans
   
-  @tag1
+  @track
   Scenario: Customer views past meal orders
     Given A customer has placed previous  meal orders
     When The  customer  access thier order history
     Then The system should display past meal orders
 
-  @tag2
+  @track
   Scenario Outline: Chef suggests personalized meal plans
     Given A chef wants to access customer older history
     When the chef chooses a customer from order history
     Then The system should display the customer is past orders
     And The chef should be able to suggest personalized meal plans
     
- @tag3
+ @track
   Scenario Outline: System administrator manages order history
     Given the system administrator wants to store and retrieve order history
     When the adminstrator accesses the order history

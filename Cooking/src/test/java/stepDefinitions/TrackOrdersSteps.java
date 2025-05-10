@@ -50,11 +50,20 @@ public class TrackOrdersSteps {
 	public void a_chef_wants_to_access_customer_older_history() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
+		customer = new Customer("Asaad Daoud");
+		 List <String> i1 =new ArrayList();
+		 List <String> i2= new ArrayList();
+		 List <String> i3= new ArrayList();
+	     customer.addOrder(new Meal("Pasta",i1));
+	     customer.addOrder(new Meal("Salad",i2));
+	     customer.addOrder(new Meal("Grilled Chicken",i3));
 		chef= new Chef();
+		oh=new OrderHistory();
+		oh.addCustomer(customer);
 	}
 
-	@When("the chef chooses a customer from order history ")
-	public void the_chef_selects_a_customer() {
+	@When("the chef chooses a customer from order history")
+	public void the_chef_selects_a_customer_from_order_history() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
 		retrievedOrders = customer.getPastOrders();
@@ -64,20 +73,29 @@ public class TrackOrdersSteps {
 	public void the_system_should_display_the_customer_is_past_orders() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
-		chef.viewCustomerOrders(customer);
+		chef.viewCustomerOrders(customer,oh);
 	}
 
 	@Then("The chef should be able to suggest personalized meal plans")
 	public void the_chef_should_be_able_to_suggest_personalized_meal_plans() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
-		chef.suggestMealPlan();
+		chef.suggestMealPlan(customer,oh);
 	}
 
 	@Given("the system administrator wants to store and retrieve order history")
 	public void the_system_administrator_wants_to_store_and_retrieve_order_history() {
 	    // Write code here that turns the phrase above into concrete actions
 	    //throw new io.cucumber.java.PendingException();
+		customer = new Customer("Asaad Daoud");
+		 List <String> i1 =new ArrayList();
+		 List <String> i2= new ArrayList();
+		 List <String> i3= new ArrayList();
+	     customer.addOrder(new Meal("Pasta",i1));
+	     customer.addOrder(new Meal("Salad",i2));
+	     customer.addOrder(new Meal("Grilled Chicken",i3));
+	     oh=new OrderHistory();
+	     oh.addCustomer(customer);
 		assertNotNull("System must have order storage!", oh);
 	}
 

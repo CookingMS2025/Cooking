@@ -20,14 +20,14 @@
 Feature: Store dietary preferences and allergies
 
 
-  @tag1
+  @Store
   Scenario: Customer enteres dietary preferences and allergies
     Given a customer wants to set dietary preferences and allergies
     When the customer submits the preferences
     Then The system should store the preferences correctly
     And The system should prevent meals with allergens
 
-  @tag2
+  @Store
   Scenario: Chef views customer dietary preferences
     Given A chef wants to view customer dietary preferences
     When the chef selects a customer

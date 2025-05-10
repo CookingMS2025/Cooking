@@ -20,14 +20,14 @@
 Feature: Order and Menu Customization
   
 
-  @tag1
+  @Custom
   Scenario: Customer customizes a meal by selecting ingredients
     Given a customer wants to customize a new meal
     When the customer selects ingredients
     And  the customer names the meal
     Then the system should create and store the custom meal
 
- @tag2
+ @Custom
   Scenario: System validates incompatible ingredients
     Given the customer chooses ingredients
     When the system checks for incompatible ingredients
