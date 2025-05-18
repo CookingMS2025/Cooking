@@ -1,14 +1,14 @@
 @tag
 Feature: Generate invoices and track financial reports
 
-  @tag1
+  @billing
   Scenario: Customer receives an invoice
     Given a customer has completed a purchase
     When the transaction is confirmed by the system
     Then the system should generate an invoice
     And send it to the customer's email address
 
-  @tag2
+  @billing
   Scenario: Administrator generates financial reports
     Given the system has recorded sales and expense data for the current month
     When the administrator requests a monthly financial report

@@ -24,6 +24,7 @@ public class Chef {
 		this.scheduledMeal=scheduledMeal;
 
 	};
+	public String getName() { return name;}
 	public List<String> getExpertise() { return expertise; }
 	
 	public int getWorkload() { return workload; }

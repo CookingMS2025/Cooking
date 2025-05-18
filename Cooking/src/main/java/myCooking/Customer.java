@@ -30,7 +30,11 @@ public class Customer {
 
 	public Customer(String name,String email) {
 		this.Name=name;
-		this.email=email;}
+		this.email=email;
+		this.dietaryPreferences = new ArrayList<>();
+	    this.allergies = new ArrayList<>();
+	    this.pastOrders = new ArrayList<>();
+	    this.customMeals = new ArrayList<>();}
 
 	public Customer(String name,boolean deliveryScheduled) {
 		this.Name=name;

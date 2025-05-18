@@ -10,6 +10,8 @@ import io.cucumber.junit.CucumberOptions;
     glue = "stepDefinitions",
     plugin = {"pretty", "summary"},
     monochrome = true,
+    tags="@LS"
+    
     
     
 
