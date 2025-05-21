@@ -3,7 +3,6 @@ package myCooking;
 public class BillingService {
     private double totalSales;
     private double totalExpenses;
-    private Customer customer;
 
     public BillingService( double totalSales,double totalExpenses){
         this.totalExpenses=totalExpenses;
