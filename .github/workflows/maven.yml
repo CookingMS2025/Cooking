@@ -47,7 +47,7 @@ jobs:
           mvn -f Cooking/pom.xml -B clean verify
           org.jacoco:jacoco-maven-plugin:report
           org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-          -Dsonar.projectKey=CookingMS2025_Cooking
-          -Dsonar.organization=YOUR_ORG_KEY
+          -Dsonar.projectKey=cookingms2025
+          -Dsonar.organization=cookingms2025
           -Dsonar.token=${{ secrets.SONAR_TOKEN }}
           -Dsonar.coverage.exclusions=**/SystemMain.java
