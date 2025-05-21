@@ -44,7 +44,7 @@ jobs:
           mvn -B jacoco:prepare-agent verify 
           org.sonarsource.scanner.maven:sonar-maven-plugin:sonar 
           jacoco:report 
-          -Dsonar.projectKey=CookingMS2025_Cooking 
-          -Dsonar.organization=cookingms2025 
+          -Dsonar.projectKey=cookingms2025 
+          -Dsonar.organization=CookingMS2025_Cooking
           -Dsonar.host.url=https://sonarcloud.io 
           -Dsonar.coverage.exclusions=**/SystemMain.java
