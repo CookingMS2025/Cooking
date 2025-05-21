@@ -13,12 +13,10 @@ public class KitchenManager {
 	   int minWorkload = Integer.MAX_VALUE;
 	   // Find the chef with matching expertise and lowest workload
 	   for (Chef chef : chefs) {
-	        if (chef.getExpertise().contains(task.getCategory())) {
-	            if (chef.getWorkload() < minWorkload) {
-	                minWorkload = chef.getWorkload();
-	                mostSuitableChef = chef;
-	            }
-	        }
+	        if (chef.getExpertise().contains(task.getCategory()) && chef.getWorkload() < minWorkload) {
+                   minWorkload = chef.getWorkload();
+                    mostSuitableChef = chef;
+                 }
 	   }
 	// Assign task to the selected chef
 	    if (mostSuitableChef != null) {
