@@ -51,4 +51,5 @@ jobs:
           -Dsonar.organization=cookingms2025
           -Dsonar.token=${{ secrets.SONAR_TOKEN }}
           -Dsonar.coverage.jacoco.xmlReportPaths=Cooking27/Cooking/target/site/jacoco/jacoco.xml
-          -Dsonar.coverage.exclusions=**/src/main/java/myCooking.java
+          -Dsonar.coverage.exclusions=**/myCooking/**
+
