@@ -31,7 +31,7 @@ public class Customer {
 	public Customer(String name,String email) {
 		this.Name=name;
 		this.email=email;
-		this.dietaryPreferences = new ArrayList<>();
+		this.dietaryPreferences = new ArrayList<String>();
 	    this.allergies = new ArrayList<String>();
 	    this.pastOrders = new ArrayList<Meal>();
 	    this.customMeals = new ArrayList<Meal>();}
