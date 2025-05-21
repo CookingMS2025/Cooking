@@ -12,29 +12,29 @@ public class Customer {
 	private String email;
 	private boolean deliveryScheduled;
 	public Customer() {
-		this.dietaryPreferences=new ArrayList();
-		  this.allergies=new ArrayList();
-		  this.pastOrders=new ArrayList();
-		  this.customMeals = new ArrayList<>();
+		this.dietaryPreferences=new ArrayList<String>();
+		  this.allergies=new ArrayList<String>();
+		  this.pastOrders=new ArrayList<Meal>();
+		  this.customMeals = new ArrayList<Meal>();
 	}
 
 
 	public Customer(String name) {
 	  this.Name=name;
 
-	  this.dietaryPreferences=new ArrayList();
-	  this.allergies=new ArrayList();
-	  this.pastOrders=new ArrayList();
-	  this.customMeals = new ArrayList<>();
+	  this.dietaryPreferences=new ArrayList<String>();
+	  this.allergies=new ArrayList<String>();
+	  this.pastOrders=new ArrayList<Meal>();
+	  this.customMeals = new ArrayList<Meal>();
 	}
 
 	public Customer(String name,String email) {
 		this.Name=name;
 		this.email=email;
 		this.dietaryPreferences = new ArrayList<>();
-	    this.allergies = new ArrayList<>();
-	    this.pastOrders = new ArrayList<>();
-	    this.customMeals = new ArrayList<>();}
+	    this.allergies = new ArrayList<String>();
+	    this.pastOrders = new ArrayList<Meal>();
+	    this.customMeals = new ArrayList<Meal>();}
 
 	public Customer(String name,boolean deliveryScheduled) {
 		this.Name=name;
