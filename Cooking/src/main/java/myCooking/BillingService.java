@@ -14,7 +14,7 @@ public class BillingService {
     }
 
     public void completePurchase(Customer customer,double amount){
-        this.customer=customer;
+        System.out.println("Customer name: " + customer.getName() + "has purchased");
         totalSales+=amount;
     }
 
