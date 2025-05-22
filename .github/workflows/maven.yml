@@ -44,12 +44,13 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: >
-          mvn -f Cooking/pom.xml -B clean verify
+          mvn -B jacoco:prepare-agent verify
           org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
-          org.jacoco:jacoco-maven-plugin:report
+          jacoco:report
+          -Dsonar.coverage.exclusions=**/myCooking/**
           -Dsonar.projectKey=CookingMS2025_Cooking
           -Dsonar.organization=cookingms2025
           -Dsonar.token=${{ secrets.SONAR_TOKEN }}
           -Dsonar.coverage.jacoco.xmlReportPaths=Cooking27/Cooking/target/site/jacoco/jacoco.xml
-          -Dsonar.coverage.exclusions=**/myCooking/**
+          
 
