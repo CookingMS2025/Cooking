@@ -44,7 +44,7 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: >
-          mvn -f Cooking/pom.xml -B jacoco:prepare-agent verify
+          mvn -f Cooking/pom.xml -B clean verify
           org.jacoco:jacoco-maven-plugin:report
           org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
           -Dsonar.projectKey=CookingMS2025_Cooking
