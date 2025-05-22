@@ -43,15 +43,14 @@ jobs:
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: |
-          cd Cooking
-     mvn -B clean verify sonar:sonar \
-      -Dsonar.projectKey=CookingMS2025_Cooking \
-      -Dsonar.organization=cookingms2025 \
-      -Dsonar.host.url=https://sonarcloud.io \
-      -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
-      -Dsonar.coverage.jacoco.xmlReportPaths=target/site/jacoco/jacoco.xml \
-      -Dsonar.coverage.exclusions=**/myCooking/**
-
+        run: >
+          mvn -f Cooking/pom.xml -B jacoco:prepare-agent verify
+          org.jacoco:jacoco-maven-plugin:report
+          org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+          -Dsonar.projectKey=CookingMS2025_Cooking
+          -Dsonar.organization=cookingms2025
+          -Dsonar.token=${{ secrets.SONAR_TOKEN }}
+          -Dsonar.coverage.jacoco.xmlReportPaths=Cooking27/Cooking/target/site/jacoco/jacoco.xml
+          -Dsonar.coverage.exclusions=**/myCooking/**
           
 
